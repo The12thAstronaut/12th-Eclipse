@@ -16,7 +16,7 @@ public class TaskManager : MonoBehaviour
     private List<Task> tasks = new List<Task>();
     public List<string> taskList = new List<string>();
     public int counter = -1;
-    
+
 
 
     // Start is called before the first frame update
@@ -36,7 +36,7 @@ public class TaskManager : MonoBehaviour
         taskList.Add("Maintenance Complete");
 
         button1.OnClick.AddListener(() => ButtonPressed());
-        button1.OnClick.AddListener(() => IncrementCount());
+       
 
         if (titleLabel != null)
         {
@@ -45,13 +45,11 @@ public class TaskManager : MonoBehaviour
 
     }
 
-    public void IncrementCount()
-    {
-        Debug.Log(counter++);
-    }
+
 
     public void ButtonPressed()
     {
+        counter++;
         Debug.Log("I pressed a button");
         if (counter <= taskList.Count)
         {
@@ -71,4 +69,3 @@ public class Task
     public string text;
     public Destination taskDestination;
 }
-
