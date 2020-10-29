@@ -15,7 +15,7 @@ public class TaskManager : MonoBehaviour
     private Task currentTask;
     private List<Task> tasks = new List<Task>();
     public List<string> taskList = new List<string>();
-    public int counter = -1;
+    private int counter = -1;
 
 
 
