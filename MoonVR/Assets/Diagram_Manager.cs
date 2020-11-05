@@ -14,7 +14,7 @@ public class Diagram_Manager : MonoBehaviour
     public GameObject[] diagrams;
     public GameObject diagramPanel;
 
-    public TextMeshPro diagramLabel;
+    
     public int count = 0;
 
     // Start is called before the first frame update
@@ -23,10 +23,7 @@ public class Diagram_Manager : MonoBehaviour
         button2.OnClick.AddListener(() => ButtonPressed());
 
 
-        if (diagramLabel != null)
-        {
-            diagramLabel.SetText("Diagram Panel");
-        }
+       
     }
 
     // Update is called once per frame
@@ -40,8 +37,14 @@ public class Diagram_Manager : MonoBehaviour
         else
         {
             diagramPanel.SetActive(true);
+            for (int i = 1; i < diagrams.Length; i++)
+            {
+                diagrams[i].SetActive(false);
+            }
+            diagrams[0].SetActive(true);
+   
         }
-        diagramLabel.SetText("New Diagram");
+        
 
     }
 }

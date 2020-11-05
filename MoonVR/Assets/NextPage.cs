@@ -12,7 +12,7 @@ public class NextPage : MonoBehaviour
     public GameObject[] diagrams;
     public Interactable button3;
     public TextMeshPro title;
-    private int counter = -1;
+    public int counter;
 
  
     
