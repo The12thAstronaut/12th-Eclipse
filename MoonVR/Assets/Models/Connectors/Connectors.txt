@@ -1,0 +1,5 @@
+Here are are the connectors currently available:
+
+19-Pin Dsub Connector (Male and Female Ends)
+PC-Cable
+3-Pint XLR PCB Mount Connector (Female End)
