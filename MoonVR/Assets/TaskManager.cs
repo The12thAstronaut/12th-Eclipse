@@ -10,11 +10,13 @@ public class TaskManager : MonoBehaviour
 
     public TextMeshPro titleLabel;
     public Interactable button1;
+    public Interactable backbutton;
 
     public UnityEvent onChangedTask;
     private Task currentTask;
     private List<Task> tasks = new List<Task>();
     public List<string> taskList = new List<string>();
+    public List<string> title = new List<string>();
     private int counter = -1;
 
 
@@ -23,24 +25,14 @@ public class TaskManager : MonoBehaviour
     void Start()
     {
 
-        taskList.Add("Connect wire 1 to connector 3");
-        taskList.Add("Connect wire 2 to connector 4");
-        taskList.Add("Connect wire 3 to connector 5");
-        taskList.Add("Connect wire 4 to connector 6");
-        taskList.Add("Connect wire 5 to connector 7");
-        taskList.Add("Connect wire 6 to connector 8");
-        taskList.Add("Connect wire 7 to connector 9");
-        taskList.Add("Connect wire 8 to connector 10");
-        taskList.Add("Connect wire 9 to connector 1");
-        taskList.Add("Connect wire 10 to connector 2");
-        taskList.Add("Maintenance Complete");
 
         button1.OnClick.AddListener(() => ButtonPressed());
+        backbutton.OnClick.AddListener(() => ReverseTask());
        
 
         if (titleLabel != null)
         {
-            titleLabel.SetText("Beginning Maintenance Task: Connecting Wires to Panel");
+            titleLabel.SetText(title[0]);
         }
 
     }
@@ -59,6 +51,28 @@ public class TaskManager : MonoBehaviour
         else
         {
             titleLabel.SetText(taskList[10]);
+            counter = 10;
+        }
+    }
+
+    public void ReverseTask()
+    {
+        counter--;
+        if (0 <= counter && counter <= taskList.Count)
+        {
+            titleLabel.SetText(taskList[counter]);
+        }
+
+        else if (counter < 0)
+        {
+            titleLabel.SetText(taskList[0]);
+            counter = 0;
+        }
+
+        else
+        {
+            titleLabel.SetText(taskList[10]);
+            counter = 10;
         }
     }
 }
