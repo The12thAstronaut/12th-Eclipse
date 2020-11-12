@@ -13,16 +13,30 @@ public class NextPage : MonoBehaviour
     public Interactable button3;
     public TextMeshPro title;
     public int counter;
+    public bool showFirst;
 
  
     
     // Start is called before the first frame update
     void Start()
+
     {
-        for (int i = 0; i < diagrams.Length; i++)
+        if (showFirst)
         {
-            diagrams[i].SetActive(false);
+            for (int i = 1; i < diagrams.Length; i++)
+            {
+                diagrams[i].SetActive(false);
+            }
+
         }
+        else
+        {
+            for (int i = 0; i < diagrams.Length; i++)
+            {
+                diagrams[i].SetActive(false);
+            }
+        }
+
 
 
         button3.OnClick.AddListener(() => NextDiagram());
