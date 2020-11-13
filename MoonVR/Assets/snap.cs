@@ -13,7 +13,7 @@ public class snap : MonoBehaviour
     void Update()
     {
         float dist = Vector3.Distance(maleConnector.transform.position, femaleConnector.transform.position);
-        Debug.Log(dist);
+        
 
         if ((0 < dist  && dist < 0.04) | (dist < 0 && dist > -0.04))
         {
