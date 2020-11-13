@@ -22,7 +22,7 @@ public class fillPipet : MonoBehaviour
 
         float dist = Vector3.Distance(emptyPipet.transform.position, petriDish1.transform.position);
         float nextdist = Vector3.Distance(filledPipet.transform.position, petriDish2.transform.position);
-        Debug.Log(dist);
+        
         
         if (dist < 0.065)
         {
