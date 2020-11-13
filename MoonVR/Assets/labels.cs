@@ -28,7 +28,7 @@ public class labels : MonoBehaviour
     {
         counter++;
         Debug.Log("I pressed a button");
-        if (counter <= label1.Count)
+        if (counter < label1.Count)
         {
             labelTitle1.SetText(label1[counter]);
             labelTitle2.SetText(label2[counter]);
