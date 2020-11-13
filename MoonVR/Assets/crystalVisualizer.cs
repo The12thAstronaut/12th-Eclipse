@@ -26,7 +26,7 @@ public class crystalVisualizer : MonoBehaviour
         float dist = Vector3.Distance(microscope.transform.position, petriDish.transform.position);
         Debug.Log(dist);
 
-        if (dist < 0.15)
+        if (dist < 0.12)
         
         for (int i = 0; i < crystals.Length; i++)
         {
