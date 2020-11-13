@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Microsoft.MixedReality.Toolkit;
+using Microsoft.MixedReality.Toolkit.Input;
 
 public class crystalVisualizer : MonoBehaviour
 {
     public GameObject[] crystals;
     public GameObject petriDish;
+    public GameObject microscope;
+  
     
     
     void Start()
@@ -21,10 +23,10 @@ public class crystalVisualizer : MonoBehaviour
     void Update()
 
     {
-        float dist = Vector3.Distance(crystals[0].transform.position, petriDish.transform.position);
+        float dist = Vector3.Distance(microscope.transform.position, petriDish.transform.position);
         Debug.Log(dist);
 
-        if (dist < 0.065)
+        if (dist < 0.15)
         
         for (int i = 0; i < crystals.Length; i++)
         {
